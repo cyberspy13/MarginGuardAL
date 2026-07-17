@@ -1,0 +1,20 @@
+
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "HP-TEST",
+            "request": "launch",
+            "type": "al",
+            "tenant": "0a45ac5e-0754-4663-8787-a99a584ecf33",
+            "environmentType": "Sandbox",
+            "environmentName": "Test",
+            "startupObjectId": 22,
+            "startupObjectType": "Page",
+            "breakOnError": "All",
+            "launchBrowser": true,
+            "enableLongRunningSqlStatements": true,
+            "enableSqlInformationDebugger": true
+        }
+    ]
+}
