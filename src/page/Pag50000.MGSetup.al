@@ -4,6 +4,9 @@ page 50000 "MG Setup"
     Caption = 'MG Setup';
     PageType = Card;
     SourceTable = "MG Setup";
+    UsageCategory = Administration;
+    InsertAllowed = false;
+    DeleteAllowed = false;
 
     layout
     {
@@ -57,9 +60,10 @@ page 50000 "MG Setup"
                 {
                     ToolTip = 'Specifies the value of the Rebate Source Code field.', Comment = '%';
                 }
-                field(SIngleton; Rec.SIngleton)
+                field(Singleton; Rec.Singleton)
                 {
-                    ToolTip = 'Specifies the value of the SIngleton field.', Comment = '%';
+                    Visible = false;
+                    ToolTip = 'Specifies the value of the Singleton field.', Comment = '%';
                 }
                 field("Strategic Allowance %"; Rec."Strategic Allowance %")
                 {
@@ -96,4 +100,14 @@ page 50000 "MG Setup"
             }
         }
     }
+
+    trigger OnOpenPage()
+    begin
+        Rec.Reset();
+        if not Rec.Get('MGS') then begin
+            Rec.Init();
+            Rec.Singleton := 'MGS';
+            Rec.Insert();
+        end;
+    end;
 }

@@ -5,9 +5,10 @@ table 50000 "MG Setup"
 
     fields
     {
-        field(1; SIngleton; Code[10])
+        field(1; Singleton; Code[10])
         {
-            Caption = 'SIngleton';
+            Caption = 'Singleton';
+            //Editable = false;
         }
         field(2; "Margin Threshold %"; Decimal)
         {
@@ -68,7 +69,7 @@ table 50000 "MG Setup"
     }
     keys
     {
-        key(PK; SIngleton)
+        key(PK; Singleton)
         {
             Clustered = true;
         }
